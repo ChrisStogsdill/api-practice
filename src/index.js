@@ -11,9 +11,10 @@ function updateGif(searchTerm) {
   fetch(searchUrl, { mode: 'cors' })
     .then((response) => response.json())
     .then((response) => {
-      console.log(response.data.images.original.url);
+      //console.log(response.data.images.original.url);
       testImg.src = response.data.images.original.url;
-    });
+    })
+    .catch((err) => { alert(err); });
 }
 
 // add event listener for update button
